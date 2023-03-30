@@ -60,7 +60,7 @@ with open(csvfile,'w+') as fp:
         Target_table=Target_table.find("tbody").find_all("tr")
         
         tmp.append("0")    #增加一行
-        for i in range(len(tmp[0])) :  #新增該列的行數     
+        for i in range(len(tmp[0])) :  #新增該行的列數     
             tmp[len(tmp)-1]=["0" for _ in range(len(tmp[0]))]     
         tmp[len(tmp)-1][0]=the_date
         
