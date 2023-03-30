@@ -1,0 +1,8 @@
+執行之後便會抓取 https://covid-19.nchc.org.tw/city_confirmed.php?mycity=%E5%85%A8%E9%83%A8%E7%B8%A3%E5%B8%82 該網站的資料
+利用for迴圈將預先設好的date期限進行指定次數
+利用list儲存需要寫入csv檔的資料
+會先判斷list的大小是否維1，若為1則表示第一次進到迴圈，先抓取改網站提供的所有縣市，並將其放置list第一行(list[0][0]="日期")
+利用driver.find_element來抓取輸入資料的格子位置，進行點擊、清空、輸入資料
+利用BeautifulSoup將搜尋的資料更新至自訂變數(soup:原先會抓取原本表格，搜尋過後便須再重抓取表格)
+設置except預防NoSuchElementException發生
+利用for迴圈，讓table的每行tr皆會跑到，再尋找該行的所有td判斷是否有值(有可能無 eg.No matching records found)，若有值則根據對應的縣市輸入資料
